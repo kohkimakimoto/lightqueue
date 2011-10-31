@@ -6,13 +6,16 @@ LightQueue はPHPで書かれたシンプルなジョブキューエンジンで
 ## ライセンス
 
 The MIT Licenseです。
-また以下のソフトウェアのコードを含んでいます。
+
+また以下のライセンスのソフトウェアのコードを含んでいます。
 
 myqueue
+
     https://github.com/kotas/myqueue/blob/master/MyQueue.php
     The MIT License.
 
 System_Daemon
+
     http://trac.plutonia.nl/projects/system_daemon
     New BSD Licence.
 
@@ -23,18 +26,22 @@ System_Daemon
 lightqueue/schema/lightqueue.sqlのDDLでMySQLにテーブルを作成します。
 
 lightqueue/command/lightqueued_setup.phpを実行して起動スクリプトを作成します。
+    
     例)
     # php ${your lightqueue dir}/command/lightqueued_setup.php
 
 ## 使い方
 
 ジョブを実行するデーモンを実行します。
+    
     # /etc/init.d/lightqueued start
   
 停止は以下のようにします。
+    
     # /etc/init.d/lightqueued stop
   
 ジョブを投入するには、以下のようにLightQueue#addTaskメソッドでPHPのオブジェクトを投入します。ジョブはrunメソッドを持ちシリアライズ可能であるなら何でも投入できます。
+    
     require_once 'LightQueue.php';
     require_once 'LightQueue/Manager.php';
     require_once 'LightQueue/SampleTask/HelloTask.php';
